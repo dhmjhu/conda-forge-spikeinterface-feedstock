@@ -1,5 +1,5 @@
 {% set name = "spikeinterface" %}
-{% set version = "0.101.2" %}
+{% set version = "0.102.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spikeinterface-{{ version }}.tar.gz
-  sha256: a538fdce2601556baaba0e1caa2fcfce3b840f755bba69437a7a0a29601114d8
+  sha256: 1241c99518259895b290588045caa243cce5a8d57da24638db235ff5c9f5c604
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,11 +21,11 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<4.0
-    - numpy >=1.20,<2.0
+    - numpy >=1.20
     - threadpoolctl >=3.0.0
     - tqdm
-    - zarr >=2.16,<2.18
-    - python-neo >=0.13.0
+    - zarr >=2.18,<3
+    - python-neo >=0.14.0
     - probeinterface >=0.2.23
     - packaging
 
