@@ -21,7 +21,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<4.0
-    - numpy >=1.20
+    - numpy >=1.20  # [py<313]
+    - numpy >=2.0.0  # [py>=313]
     - threadpoolctl >=3.0.0
     - tqdm
     - zarr >=2.18,<3
