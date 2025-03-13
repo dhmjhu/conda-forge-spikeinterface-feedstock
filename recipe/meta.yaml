@@ -10,17 +10,16 @@ source:
   sha256: 7d7de7d185a8a2066c2748f5dc22d521b3c01e1e3898985f8210953d0da73d7e
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - setuptools >=62.0
     - pip
   run:
-    - python >={{ python_min }},<4.0
+    - python
     - numpy >=1.20  # [py<313]
     - numpy >=2.0.0  # [py>=313]
     - threadpoolctl >=3.0.0
@@ -37,7 +36,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python
 
 about:
   home: https://github.com/SpikeInterface/spikeinterface
