@@ -1,5 +1,5 @@
 {% set name = "spikeinterface" %}
-{% set version = "0.102.2" %}
+{% set version = "0.102.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spikeinterface-{{ version }}.tar.gz
-  sha256: 241035d497c0d334f083fce5b62cdec17d9295ae114c76763033e6001d70508a
+  sha256: c820986112b3561a8b40728767ad7b00c9af096f04cbaa6a07c4bb8a9d2964a5
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   host:
