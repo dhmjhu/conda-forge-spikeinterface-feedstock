@@ -11,12 +11,12 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python
-    - setuptools >=62.0
+    - setuptools >=78.0.2
     - pip
   run:
     - python
@@ -25,7 +25,7 @@ requirements:
     - threadpoolctl >=3.0.0
     - tqdm
     - zarr >=2.18,<3
-    - python-neo >=0.14.0
+    - python-neo >=0.14.1
     - probeinterface >=0.2.23
     - packaging
     - numcodecs <0.16.0
