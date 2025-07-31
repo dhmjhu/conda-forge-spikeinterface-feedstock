@@ -1,5 +1,5 @@
 {% set name = "spikeinterface" %}
-{% set version = "0.102.3" %}
+{% set version = "0.103.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spikeinterface-{{ version }}.tar.gz
-  sha256: c820986112b3561a8b40728767ad7b00c9af096f04cbaa6a07c4bb8a9d2964a5
+  sha256: 707cebd20994f32201ecace7241cbcbd7699a7e41e151d6a972f2858a003111d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -26,8 +26,9 @@ requirements:
     - tqdm
     - zarr >=2.18,<3
     - python-neo >=0.14.1
-    - probeinterface >=0.2.23
+    - probeinterface >=0.3.0
     - packaging
+    - pydantic
     - numcodecs <0.16.0
   run_constrained:
     # As of 0.101.1, the minimum supported version of Kilosort4 is 4.0.16:
